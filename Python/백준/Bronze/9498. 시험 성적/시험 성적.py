@@ -2,15 +2,14 @@
 num = int(input())//10
 result = ""
 
-if num < 6:
-    result = 'F'
-elif num < 7:
-    result = 'D'
-elif num < 8:
-    result = 'C'
-elif num < 9:
-    result = 'B'
-else:
+if num >= 9:
     result = 'A'
-    
+elif num == 8:
+    result = 'B'
+elif num == 7:
+    result = 'C'
+elif num == 6:
+    result = 'D'
+else:
+    result = 'F'
 print(result)
