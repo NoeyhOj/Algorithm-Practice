@@ -2,6 +2,11 @@ a,b,c,n = map(int, input().split())
 result = 0
 if(a == 1):
     print('1')
+elif(b%a == 0 and c%a == 0):
+    if(n%a == 0):
+        print('1')
+    else:
+        print('0')
 else:
     for x in range(int(n//a)):
         for y in range(int(n//b)):
