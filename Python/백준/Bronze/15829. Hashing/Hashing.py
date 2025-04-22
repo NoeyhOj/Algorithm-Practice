@@ -11,4 +11,4 @@ wordDic = {'a':1, 'b':2, 'c':3, 'd':4, 'e':5, 'f':6,
 result = 0
 for i in range(n):
     result += wordDic[wordList[i]] * (31**i)
-print(result)
+print(result % 1234567891)
