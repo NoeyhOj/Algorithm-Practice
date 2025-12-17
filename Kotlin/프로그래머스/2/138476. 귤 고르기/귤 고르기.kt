@@ -1,18 +1,13 @@
 class Solution {
-    var answer: Int = 0
-    var result: Int = 0
     fun solution(k: Int, tangerine: IntArray): Int {
-        var mikan = mutableMapOf<Int, Int>()
-        for (i in tangerine.toSet()) {
-            mikan[i] = tangerine.count{ it == i } 
-        }
-        var mikanSort = mikan.keys.sortedByDescending{ mikan[it] }
-        for (j in mikanSort.indices) {
-            result += mikan[mikanSort[j]] ?: 0
-            if (result >= k) {
-                answer = j + 1
-                break
+        var answer: Int = 0
+        var sum: Int = 0
+        tangerine.groupBy{ it }.toList().sortedByDescending{ it.second.size }.forEach{
+            if (sum >= k) {
+                return answer
             }
+            sum += it.second.size
+            answer++
         }
         return answer
     }
